@@ -102,9 +102,9 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 ## Iniciar 
 
 Para iniciar este proyecto de forma local es necesario usar docker o crear un archivo .env
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=postgres
-DB_PASS=postgres
-DB_NAME=todoapp
+- DB_HOST=localhost
+- DB_PORT=5432
+- DB_USER=postgres
+- DB_PASS=postgres
+- DB_NAME=todoapp
 
