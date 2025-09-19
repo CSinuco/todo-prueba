@@ -12,7 +12,7 @@ export class DeleteTaskUseCase {
     const task = await this.taskRepo.findById(taskId);
     if (!task) throw new NotFoundException('Task not found');
 
-    task.isDeleted = true; // 👈 marcar soft delete
+    task.isDeleted = true; 
     return this.taskRepo.update(task);
   }
 }
