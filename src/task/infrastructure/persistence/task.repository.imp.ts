@@ -39,6 +39,11 @@ async update(task: Task): Promise<Task> {
     return entities.map(TaskMapper.toDomain);
   }
 
+  async findByUserId(userId: number): Promise<Task | null> {
+    const entity = await this.repo.findOneBy({ userId });
+    return entity ? TaskMapper.toDomain(entity) : null;
+  }
+
   async findByStatus(status: TaskStatus): Promise<Task[]> {
     const entities = await this.repo.find({ where: { status } });
     return entities.map(TaskMapper.toDomain);

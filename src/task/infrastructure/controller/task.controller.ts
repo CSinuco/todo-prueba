@@ -12,7 +12,7 @@ export class TaskController {
   constructor(
     private readonly createTaskUC: CreateTaskUseCase,
     private readonly listTasksUC: ListTasksUseCase,
-    private readonly findTaskByIdUC: FindTaskByIdUseCase,
+    private readonly findTaskByUserIdUC: FindTaskByIdUseCase,
     private readonly updateTaskStatusUC: UpdateTaskStatusUseCase,
     private readonly deleteTaskUC: DeleteTaskUseCase,
   ) {}
@@ -41,10 +41,10 @@ export class TaskController {
     return this.listTasksUC.execute();
   }
 
-  @Get(':id')
-  @ApiResponse({ status: 200, description: 'Find task by ID' })
-  findById(@Param('id') id: number) {
-    return this.findTaskByIdUC.execute(Number(id));
+  @Get('user/:userId')
+  @ApiResponse({ status: 200, description: 'Find tasks by userId' })
+  findByUserId(@Param('userId') userId: number) {
+    return this.findTaskByUserIdUC.execute(Number(userId));
   }
 
   @Patch(':id/status')

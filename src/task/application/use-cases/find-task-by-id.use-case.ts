@@ -8,8 +8,8 @@ export class FindTaskByIdUseCase {
     @Inject(TASK_REPOSITORY) private readonly taskRepo: ITaskRepository,
   ) {}
 
-  async execute(taskId: number): Promise<Task> {
-    const task = await this.taskRepo.findById(taskId);
+    async execute(userId: number): Promise<Task> {
+    const task = await this.taskRepo.findByUserId(userId);
 
     if (!task || task.isDeleted) {
       throw new NotFoundException('Task not found');

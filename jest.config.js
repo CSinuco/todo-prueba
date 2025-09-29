@@ -8,6 +8,6 @@ module.exports = {
     '^.+\\.(t|j)s$': 'ts-jest',
   },
   moduleNameMapper: {
-    '^src/(.*)$': '<rootDir>/src/$1',   // 👈 clave
+    '^src/(.*)$': '<rootDir>/src/$1',   
   },
 };
